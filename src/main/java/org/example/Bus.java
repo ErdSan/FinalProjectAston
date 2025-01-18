@@ -2,16 +2,27 @@ package org.example;
 
 import java.util.Objects;
 
-public class Bus implements Comparable <Bus>{
+public class Bus implements Comparable<Bus> {
     private final String model;
     private final int number;
     private final double mileage;
+
 
     public Bus(Builder builder) {
         this.model = builder.model;
         this.number = builder.number;
         this.mileage = builder.mileage;
     }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "model='" + model + '\'' +
+                ", number=" + number +
+                ", mileage=" + mileage +
+                '}';
+    }
+
     @Override
     public int compareTo(Bus bus) {
         int compareByNumber = Integer.compare(this.number, bus.number);
@@ -25,9 +36,19 @@ public class Bus implements Comparable <Bus>{
         return Double.compare(this.mileage, bus.mileage);
     }
 
+    public String getModel() {
+        return model;
+    }
 
+    public int getNumber() {
+        return number;
+    }
 
-    public static class Builder{
+    public double getMileage() {
+        return mileage;
+    }
+
+    public static class Builder {
         private String model;
         private int number;
         private double mileage;
@@ -49,26 +70,16 @@ public class Bus implements Comparable <Bus>{
             this.mileage = mileage;
             return this;
         }
+
         public Bus build() {
-            if (model == null) {
-                System.out.println("Ошибка: Model не может быть null.");
-                return null;
-            }
-
+            Objects.requireNonNull(model, "Model cannot be null");
             if (number <= 0) {
-                System.out.println("Ошибка:  number  не может быть 0 .");
-                return null;
+                throw new IllegalArgumentException("Bus number must be positive"); // Выбрасываем исключение
             }
-
             return new Bus(this);
         }
-        @Override
-        public String toString() {
-            return "Builder{" +
-                    "model='" + model + '\'' +
-                    ", number=" + number +
-                    ", mileage=" + mileage +
-                    '}';
-        }
+
+
     }
 }
+

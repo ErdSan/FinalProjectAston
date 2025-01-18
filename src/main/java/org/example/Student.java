@@ -1,11 +1,13 @@
 package org.example;
 
-public class Student implements Comparable<Student>{
+import java.util.Objects;
+
+public class Student implements Comparable<Student> {
 
 
     private final int numberGroup;
     private final double averageScore;
-    private final String bookNumber;
+    private final long bookNumber;
 
     private Student(Builder builder) {
         this.numberGroup = builder.numberGroup;
@@ -13,10 +15,12 @@ public class Student implements Comparable<Student>{
         this.bookNumber = builder.bookNumber;
     }
 
-    public static class Builder{
+    public static class Builder {
         private int numberGroup;
         private double averageScore;
-        private String bookNumber;
+        private long bookNumber;
+
+
 
         public Builder setNumberGroup(int numberGroup) {
             this.numberGroup = numberGroup;
@@ -31,24 +35,26 @@ public class Student implements Comparable<Student>{
             return this;
         }
 
-        public Builder setBookNumber(String bookNumber) {
-            Objects.requireNonNull(bookNumber, "Номер зачетной книжки не может быть null");
-            if (bookNumber.isEmpty() || !bookNumber.matches("\\d+")) {
-                throw new IllegalArgumentException("Номер зачетной книжки должен быть не пустым и содержать только цифры");
+        public Builder setBookNumber(long bookNumber) {
+            if (bookNumber <= 0) {
+                throw new IllegalArgumentException("Номер зачетной книжки должен быть положительным числом.");
             }
+            // Добавьте другие проверки, если необходимо (например, проверка длины)
             this.bookNumber = bookNumber;
             return this;
         }
+
         public Student build() {
-            if (groupNumber <= 0) {
+            if (numberGroup <= 0) {
                 throw new IllegalArgumentException("Номер группы должен быть положительным");
             }
             return new Student(this);
         }
     }
+
     @Override
     public int compareTo(Student student) {
-        int groupComparison = Integer.compare(this.groupNumber,student.groupNumber);
+        int groupComparison = Integer.compare(this.numberGroup, student.numberGroup);
         if (groupComparison != 0) {
             return groupComparison;
         }
@@ -62,5 +68,16 @@ public class Student implements Comparable<Student>{
                 ", averageScore=" + averageScore +
                 ", bookNumber='" + bookNumber + '\'' +
                 '}';
+    }
+    public int getNumberGroup() {
+        return numberGroup;
+    }
+
+    public double getAverageScore() {
+        return averageScore;
+    }
+
+    public long getBookNumber() {
+        return bookNumber;
     }
 }
