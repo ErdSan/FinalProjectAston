@@ -39,7 +39,6 @@ public class Student implements Comparable<Student> {
             if (bookNumber <= 0) {
                 throw new IllegalArgumentException("Номер зачетной книжки должен быть положительным числом.");
             }
-            // Добавьте другие проверки, если необходимо (например, проверка длины)
             this.bookNumber = bookNumber;
             return this;
         }
