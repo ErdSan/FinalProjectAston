@@ -67,7 +67,8 @@ public class FilesHandler {
   //запись в файл текстовый
   private <T> void writeToTextFile(String filePath, T[] objects) {
     try (var outputStream = new BufferedWriter(new FileWriter(filePath, true))) {
-
+      var file =new File(filePath);
+      System.out.println(file.getAbsolutePath());
       for (T object : objects) {
         outputStream.append(object.toString());
         outputStream.write('\n');
@@ -169,15 +170,17 @@ public class FilesHandler {
 
           }
           if (clazz.getSimpleName().equals("Student")) {
-            var groupNumber = extractValue(values, "groupNumber");
-            var averageS = extractValue(values, "average");
-            var number = extractValue(values, "number");
-            if (!averageS.isEmpty()) {
+            var groupNumberS = extractValue(values, "numberGroup");
+            var averageS = extractValue(values, "averageScore");
+            var numberS = extractValue(values, "bookNumber");
+            if (!averageS.isEmpty() && !numberS.isEmpty() && !groupNumberS.isEmpty()) {
               var average = Double.parseDouble(averageS);
-                validator.validateStudent(groupNumber, average, number);
+              var number = Long.parseLong(numberS);
+              var groupNumber = Integer.parseInt(groupNumberS);
+                validator.validateStudent(groupNumberS, average, numberS);
                 resultArray[count] = (T) new Student.Builder()
-                    .setNumberGroup(Integer.parseInt(groupNumber))
-                    .setBookNumber(Long.parseLong(number))
+                    .setNumberGroup(groupNumber)
+                    .setBookNumber(number)
                     .setAverageScore(average)
                     .build();
                 count++;
