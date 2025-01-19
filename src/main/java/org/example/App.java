@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.binarySearch.BinarySearch;
+import org.example.BinarySearch.BinarySearch;
 import org.example.data.ConsoleInputHandler;
 import org.example.data.FilesHandler;
 import org.example.data.RandomInputHandler;
