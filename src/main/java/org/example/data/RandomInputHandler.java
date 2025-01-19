@@ -24,9 +24,9 @@ public class RandomInputHandler {
 
   private String randomLengthLetterString(int length) {
     var finalString = new StringBuilder();
-    finalString.append((char) random.nextInt(65,91));
+    finalString.append((char) (random.nextInt(91 - 65) + 65));
     for (int i = 0; i < length - 1; i++) {
-      finalString.append((char) (random.nextInt(97,123)));
+      finalString.append((char) (random.nextInt(123 - 97) + 97));
     }
     return finalString.toString();
   }
@@ -36,7 +36,7 @@ public class RandomInputHandler {
     for (int i = 0; i < amount; i++) {
       var number = random.nextInt(1000);
       var model = "Model" + randomCharacter();
-      var mileage = random.nextDouble(0, 150000);
+      var mileage = random.nextDouble() * 150000;
       buses[i] = new Bus.Builder()
           .setMileage(mileage)
           .setModel(model)
@@ -49,9 +49,9 @@ public class RandomInputHandler {
   public Student[] createRandomStudents(int amount) {
     var students = new Student[amount];
     for (int i = 0; i < amount; i++) {
-      var groupNumber = random.nextInt(1000);
-      var number = random.nextLong(50000);
-      var average = random.nextDouble(0, 5);
+      var groupNumber = random.nextInt(1000) + 1;
+      var number = random.nextInt(50000) + 1;
+      var average = random.nextDouble() * 5;
       students[i] = new Student.Builder()
           .setNumberGroup(groupNumber)
           .setBookNumber(number)
@@ -64,9 +64,9 @@ public class RandomInputHandler {
   public User[] createRandomUsers(int amount) {
     var users = new User[amount];
     for (int i = 0; i < amount; i++) {
-      var name = randomLengthLetterString(random.nextInt(4, 10));
-      var password = randomLengthString(random.nextInt(6, 12));
-      var email = randomLengthLetterString(random.nextInt(5, 10)) + "@random.com";
+      var name = randomLengthLetterString(random.nextInt(10 - 4) + 4);
+      var password = randomLengthString(random.nextInt(12 - 6) + 6);
+      var email = randomLengthLetterString(random.nextInt(10 - 5) + 5) + "@random.com";
       users[i] = new User.Builder()
           .setEmail(email)
           .setPassword(password)
