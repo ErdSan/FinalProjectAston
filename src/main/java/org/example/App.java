@@ -155,7 +155,7 @@ public class App {
                             System.out.println("Введите номер группы:");
                             int numberGroup = scanner.nextInt();
                             System.out.println("Введите среднюю оценку:");
-                            int averageScope = scanner.nextInt();
+                            double averageScope = scanner.nextDouble();
                             System.out.println("Введите номер зачетной книги:");
                             int bookNumber = scanner.nextInt();
                             BinarySearch<Student> studentsBinarySearch = new BinarySearch<>();
