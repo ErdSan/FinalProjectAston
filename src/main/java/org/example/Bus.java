@@ -18,8 +18,8 @@ public class Bus implements Comparable<Bus> {
     public String toString() {
         return "Bus{" +
                 "model='" + model + '\'' +
-                ", number=" + number +
-                ", mileage=" + mileage +
+                ", number='" + number + '\'' +
+                ", mileage='" + mileage + '\'' +
                 '}';
     }
 
