@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.Student;
+import org.example.dto.Student;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

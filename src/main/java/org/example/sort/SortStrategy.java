@@ -1,4 +1,4 @@
-package org.sort;
+package org.example.sort;
 
 // Интерфейс стратегии сортировки
 public interface SortStrategy<T> {

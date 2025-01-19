@@ -1,4 +1,4 @@
-package org.example;
+package org.example.dto;
 
 public class User implements Comparable<User> {
     private final String name;
@@ -17,7 +17,7 @@ public class User implements Comparable<User> {
         return email;
     }
 
-    private User(Builder builder) {
+    public User(Builder builder) {
         this.name = builder.name;
         this.password = builder.password;
         this.email = builder.email;

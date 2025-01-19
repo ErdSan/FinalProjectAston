@@ -1,9 +1,9 @@
 package org.example.data;
 
 import java.util.Scanner;
-import org.example.Bus;
-import org.example.Student;
-import org.example.User;
+import org.example.dto.Bus;
+import org.example.dto.Student;
+import org.example.dto.User;
 import org.example.exception.ValidateException;
 import org.example.validate.Validator;
 
@@ -58,9 +58,9 @@ public class ConsoleInputHandler {
         scanner.nextLine();
         validator.validateStudent(groupNumber, average, number);
         students[i] = new Student.Builder()
-            .setRecordBookNumber(number)
-            .setAverage(average)
-            .setGroupNumber(groupNumber)
+            .setBookNumber(Long.parseLong(number))
+            .setAverageScore(average)
+            .setNumberGroup(Integer.parseInt(groupNumber))
             .build();
       } catch (ValidateException exception) {
         System.err.println(exception.getMessage());

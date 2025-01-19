@@ -1,7 +1,10 @@
 package org.sort;
 
+import org.example.sort.EvenOddSort;
+import org.example.sort.SelectionSort;
+import org.example.sort.SortStrategy;
 import org.junit.jupiter.api.Test;
-import org.example.Bus;
+import org.example.dto.Bus;
 
 
 

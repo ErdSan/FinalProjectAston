@@ -4,6 +4,10 @@ package org.example.BinarySearch;
 *   Реализация бинарного поиска
 */
 
+import org.example.dto.Bus;
+import org.example.dto.Student;
+import org.example.dto.User;
+
 public class BinarySearch<T extends Comparable<T>> {
     public int search(T[] array, T key) {
         int low = 0;

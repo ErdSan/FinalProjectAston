@@ -1,6 +1,4 @@
-package org.example;
-
-import java.util.Objects;
+package org.example.dto;
 
 public class Student implements Comparable<Student> {
 
@@ -9,7 +7,7 @@ public class Student implements Comparable<Student> {
     private final double averageScore;
     private final long bookNumber;
 
-    private Student(Builder builder) {
+    public Student(Builder builder) {
         this.numberGroup = builder.numberGroup;
         this.averageScore = builder.averageScore;
         this.bookNumber = builder.bookNumber;

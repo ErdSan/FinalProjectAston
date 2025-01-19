@@ -1,4 +1,4 @@
-package org.sort;
+package org.example.sort;
 
 // Реализация сортировки для четных и нечетных значений
 public class EvenOddSort<T extends Comparable<T>> implements SortStrategy<T> {

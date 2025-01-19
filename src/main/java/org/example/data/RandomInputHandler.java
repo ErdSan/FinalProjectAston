@@ -1,9 +1,9 @@
 package org.example.data;
 
 import java.util.Random;
-import org.example.Bus;
-import org.example.Student;
-import org.example.User;
+import org.example.dto.Bus;
+import org.example.dto.Student;
+import org.example.dto.User;
 
 public class RandomInputHandler {
   private static final Random random = new Random();
@@ -53,9 +53,9 @@ public class RandomInputHandler {
       var number = Integer.toString(random.nextInt(50000));
       var average = random.nextDouble(0, 10);
       students[i] = new Student.Builder()
-          .setGroupNumber(groupNumber)
-          .setRecordBookNumber(number)
-          .setAverage(average)
+          .setNumberGroup(Integer.parseInt(groupNumber))
+          .setBookNumber(Long.parseLong(number))
+          .setAverageScore(average)
           .build();
     }
     return students;

@@ -13,9 +13,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.File;
-import org.example.Bus;
-import org.example.Student;
-import org.example.User;
+import org.example.dto.Bus;
+import org.example.dto.Student;
+import org.example.dto.User;
 import org.example.exception.ValidateException;
 import org.example.validate.Validator;
 
@@ -176,9 +176,9 @@ public class FilesHandler {
               var average = Double.parseDouble(averageS);
                 validator.validateStudent(groupNumber, average, number);
                 resultArray[count] = (T) new Student.Builder()
-                    .setGroupNumber(groupNumber)
-                    .setRecordBookNumber(number)
-                    .setAverage(average)
+                    .setNumberGroup(Integer.parseInt(groupNumber))
+                    .setBookNumber(Long.parseLong(number))
+                    .setAverageScore(average)
                     .build();
                 count++;
             }

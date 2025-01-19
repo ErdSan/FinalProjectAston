@@ -1,4 +1,4 @@
-package org.sort;
+package org.example.sort;
 
 // Реализация сортировки выбором
 public class SelectionSort<T extends Comparable<T>> implements SortStrategy<T> {
