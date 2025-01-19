@@ -1,7 +1,6 @@
 package org.example;
 
-
-import org.example.BinarySearch.BinarySearch;
+import org.example.binarySearch.BinarySearch;
 import org.example.data.ConsoleInputHandler;
 import org.example.data.FilesHandler;
 import org.example.data.RandomInputHandler;
@@ -17,6 +16,7 @@ public class App {
     static Student[] students;
     static Bus[] buses;
     static User[] users;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -151,16 +151,37 @@ public class App {
                     choiceInput = scanner.nextInt();
                     switch (choiceInput) {
                         case 1:
+                            System.out.println("Введите данные по которым искать студента:");
+                            System.out.println("Введите номер группы:");
+                            int numberGroup = scanner.nextInt();
+                            System.out.println("Введите среднюю оценку:");
+                            int averageScope = scanner.nextInt();
+                            System.out.println("Введите номер зачетной книги:");
+                            int bookNumber = scanner.nextInt();
                             BinarySearch<Student> studentsBinarySearch = new BinarySearch<>();
-                            //studentsBinarySearch.search(students, new Student(new Student.Builder()));
+                            studentsBinarySearch.search(students, new Student.Builder().setNumberGroup(numberGroup).setAverageScore(averageScope).setBookNumber(bookNumber).build());
                             break;
                         case 2:
+                            System.out.println("Введите данные по которым искать автобус:");
+                            System.out.println("Введите модель автобуса:");
+                            String modelBus = scanner.nextLine();
+                            System.out.println("Введите номер автобуса:");
+                            int numberBus = scanner.nextInt();
+                            System.out.println("Введите пробег автобуса:");
+                            double mileage = scanner.nextDouble();
                             BinarySearch<Bus> busBinarySearch = new BinarySearch<>();
-                            //busBinarySearch.search(buses, new Bus(new Bus.Builder()));
+                            busBinarySearch.search(buses, new Bus.Builder().setModel(modelBus).setNumber(numberBus).setMileage(mileage).build());
                             break;
                         case 3:
+                            System.out.println("Введите данные по которым искать пользователя:");
+                            System.out.println("Введите имя пользователя:");
+                            String name = scanner.nextLine();
+                            System.out.println("Введите пароль пользователя:");
+                            String password = scanner.nextLine();
+                            System.out.println("Введите email пользователя:");
+                            String email = scanner.nextLine();
                             BinarySearch<User> userBinarySearch = new BinarySearch<>();
-                            //userBinarySearch.search(users, new User(new User.Builder()));
+                            userBinarySearch.search(users, new User.Builder().setName(name).setPassword(password).setEmail(email).build());
                             break;
                         default:
                             System.out.println("Неверный выбор. Попробуйте снова.");
