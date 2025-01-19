@@ -49,12 +49,12 @@ public class RandomInputHandler {
   public Student[] createRandomStudents(int amount) {
     var students = new Student[amount];
     for (int i = 0; i < amount; i++) {
-      var groupNumber = Integer.toString(random.nextInt(1000));
-      var number = Integer.toString(random.nextInt(50000));
-      var average = random.nextDouble(0, 10);
+      var groupNumber = random.nextInt(1000);
+      var number = random.nextLong(50000);
+      var average = random.nextDouble(0, 5);
       students[i] = new Student.Builder()
-          .setNumberGroup(Integer.parseInt(groupNumber))
-          .setBookNumber(Long.parseLong(number))
+          .setNumberGroup(groupNumber)
+          .setBookNumber(number)
           .setAverageScore(average)
           .build();
     }

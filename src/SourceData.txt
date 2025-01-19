@@ -1,0 +1,9 @@
+Student{numberGroup='74', averageScore='2.212559641594232', bookNumber='49307'}
+Student{numberGroup='713', averageScore='4.691619821692338', bookNumber='8441'}
+Student{numberGroup='559', averageScore='4.982600540396097', bookNumber='13977'}
+Student{numberGroup='769', averageScore='1.3599554661150137', bookNumber='38020'}
+Student{numberGroup='311', averageScore='2.041434644422089', bookNumber='10353'}
+Student{numberGroup='889', averageScore='1.2629046502021735', bookNumber='18342'}
+Student{numberGroup='485', averageScore='2.369000277373213', bookNumber='618'}
+Student{numberGroup='510', averageScore='2.996822629408701', bookNumber='2040'}
+Student{numberGroup='955', averageScore='2.3623648104102424', bookNumber='20066'}

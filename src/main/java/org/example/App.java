@@ -78,13 +78,13 @@ public class App {
                             amount = scanner.nextInt();
                             switch (choiceInput) {
                                 case 1:
-                                    students = filesHandler.readFromFile("src/SourceData.txt", Student.class, amount);
+                                    students = filesHandler.readFromFile("FinalProjectAston/src/SourceData.txt", Student.class, amount);
                                     break;
                                 case 2:
-                                    buses = filesHandler.readFromFile("src/SourceData.txt", Bus.class, amount);
+                                    buses = filesHandler.readFromFile("FinalProjectAston/src/SourceData.txt", Bus.class, amount);
                                     break;
                                 case 3:
-                                    users = filesHandler.readFromFile("src/SourceData.txt", User.class, amount);
+                                    users = filesHandler.readFromFile("FinalProjectAston/src/SourceData.txt", User.class, amount);
                                     break;
                                 default:
                                     System.out.println("Неверный выбор! Начните с начала!");
@@ -176,13 +176,13 @@ public class App {
                     FilesHandler filesHandler = new FilesHandler();
                     switch (choiceInput) {
                         case 1:
-                            filesHandler.writeToFile("src/Result.txt", students);
+                            filesHandler.writeToFile("FinalProjectAston/src/Result.txt", students);
                             break;
                         case 2:
-                            filesHandler.writeToFile("src/Result.txt", buses);
+                            filesHandler.writeToFile("FinalProjectAston/src/Result.txt", buses);
                             break;
                         case 3:
-                            filesHandler.writeToFile("src/Result.txt", users);
+                            filesHandler.writeToFile("FinalProjectAston/src/Result.txt", users);
                             break;
                         default:
                             System.out.println("Неверный выбор. Попробуйте снова.");

@@ -38,7 +38,7 @@ public class Validator {
       throw new ValidateException("E");
     if (groupNumber.isEmpty() || !groupNumber.matches("\\d+"))
       throw new ValidateException("Номер группы должен быть численный");
-    if (averageGrade < 0 || averageGrade > 10)
+    if (averageGrade < 0 || averageGrade > 5)
       throw new ValidateException("Средний балл должен быть в диапазоне от 0 до 10");
     if (recordBookNumber.isEmpty() || !recordBookNumber.matches("\\d+"))
       throw new ValidateException("Номер зачетной книжки должен быть численный");
