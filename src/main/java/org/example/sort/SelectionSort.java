@@ -5,6 +5,7 @@ public class SelectionSort<T extends Comparable<T>> implements SortStrategy<T> {
 
     /**
      * Реализует сортировку выбором.
+     *
      * @param array массив, который нужно отсортировать.
      */
     @Override

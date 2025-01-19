@@ -66,6 +66,7 @@ public class User implements Comparable<User> {
         }
         return this.name.compareToIgnoreCase(user.name);
     }
+
     @Override
     public String toString() {
         return "User{" +

@@ -36,6 +36,7 @@ public class EvenOddSort<T extends Comparable<T>> implements SortStrategy<T> {
 
     /**
      * Проверяет, является ли значение четным.
+     *
      * @param value значение для проверки.
      * @return true, если значение четное; иначе false.
      */

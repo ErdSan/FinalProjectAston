@@ -1,13 +1,12 @@
 package org.example.BinarySearch;
 
-/*
-*   Реализация бинарного поиска
-*/
-
 import org.example.dto.Bus;
 import org.example.dto.Student;
 import org.example.dto.User;
 
+/**
+ * Реализация бинарного поиска
+ */
 public class BinarySearch<T extends Comparable<T>> {
     public int search(T[] array, T key) {
         int low = 0;
@@ -28,11 +27,9 @@ public class BinarySearch<T extends Comparable<T>> {
         return -1;
     }
 
-
-    /*
-     *   Блок для вывода сообщения, что элемент найден и находиться на таком-то индексе
-    */
-
+    /**
+     * Блок для вывода сообщения, что элемент найден и находиться на таком-то индексе
+     */
     private void printFoundMessage(T element, int index) {
         if (element instanceof Bus) {
             System.out.println("Автобус найден: " + element + " на индексе " + index);
@@ -45,10 +42,9 @@ public class BinarySearch<T extends Comparable<T>> {
         }
     }
 
-    /*
-     *   Блок для вывода сообщения, что элемент не найден
+    /**
+     * Блок для вывода сообщения, что элемент не найден
      */
-
     private void printNotFoundMessage(T key) {
         if (key instanceof Bus) {
             System.out.println("Автобус не найден.");
